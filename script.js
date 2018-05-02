@@ -26,21 +26,25 @@ function startCombat() {
 
         let again = prompt("Would you like to attack or quit?");
 
-      
-      
-      
-        if (grantHealth <= 0) {
-          userWins ++;
-          grantHealth = 10;
-          console.log("Grant is defeated and user gets win number " + userWins)
-        } if (userWins === 3) {
-          console.log(`${character} is the winner!`);
+        if (again === "attack"){
+                
+          if (grantHealth <= 0) {
+            userWins ++;
+            grantHealth = 10;
+            console.log("Grant is defeated and user gets win number " + userWins);
+          } if (userWins === 3) {
+            console.log(`${character} is the winner!`);
+            break;
+          }
+          if (userHealth <= 0) {
+            console.log("Grant is the winner");
+            break; 
+          }
+        } else if (again === "quit") {
+          console.log("goodbye");
           break;
         }
-        if (userHealth <= 0) {
-          console.log("Grant is the winner");
-          break; 
-        }
+
       } 
     } else if (play === 'quit'){
       console.log('goodbye');
